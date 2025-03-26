@@ -23,14 +23,12 @@
   --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-html {
+html, body {
   scrollbar-width: none;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.active {
-  background-color: var(--primarycolor);
-  color: var(--bgcolor);
-}
 
 img {
   max-width: 100%;
@@ -78,6 +76,9 @@ body {
   /* padding-right: -1rem; */
 }
 
+.dropdown i {
+  font-size: 1.5rem;
+}
 .college-head a {
   font-size: 2.3rem;
   font-weight: 700;
@@ -117,11 +118,11 @@ body {
   font-size: 1.2rem;
 }
 
-#dropdownMenu2:hover {
+/* #dropdownMenu2:hover {
   border: 1px solid var(--bordercolor);
   color: var(--textcolor);
   border-radius: 40px;
-}
+} */
 
 .dept-head {
   position: absolute;
@@ -211,6 +212,10 @@ body {
   color: #fff;
   text-transform: uppercase;
   text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #00f;
+}
+.text-container .plug {
+  padding:0 15px;
+  font-size: 0.1rem;
 }
 
 .text-container .divider {
@@ -759,6 +764,10 @@ body {
     margin-left: 25px;
   }
 
+  .plug {
+    padding: 0 110px;
+  }
+
   /* .main-left {
     padding: 10px;
     font-size: 14px;
@@ -780,9 +789,12 @@ body {
 
   .genio {
     font-size: 35px;
+    margin-right: 27px;
   }
 
   .text-container span {
+    margin: auto;
+    width: 90%;
     font-size: 20px;
   }
 
