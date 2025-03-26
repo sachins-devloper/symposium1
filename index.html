@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GENIO 2K25</title>
-    <link rel="icon" href="img/event-log.jpeg">
+    <link rel="icon" href="img/event-log.jpeg" />
 
     <!-- Bootstrap CDN -->
     <link
@@ -29,28 +29,35 @@
     <link rel="stylesheet" href="CSS/stylesheet.css" />
   </head>
   <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <img src="/img/event-log.jpeg" class="pre-logo" alt="Event Logo" />
+      <div class="loading-text">Loading...</div>
+    </div>
+
     <div id="container">
       <!-- header -->
       <header class="header">
         <div class="logo">
-          <img src="https://res.cloudinary.com/dihkz12e6/image/upload/v1742958500/anna-clg-logo_xrsku2.png" alt="" />
+          <img
+            src="https://res.cloudinary.com/dihkz12e6/image/upload/v1742958500/anna-clg-logo_xrsku2.png"
+            alt=""
+          />
         </div>
 
         <div class="college-head">
           <a href="">Anna University Regional Campus, Coimbatore</a>
         </div>
-
-        
-
+        <p class="dept-head">Department of Computer Science and Engineering</p>
         <div class="dropdown">
           <button
-            class="btn btn-secondary "
+            class="btn btn-secondary"
             type="button"
             id="dropdownMenu2"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-          <i class="fa-solid fa-bars"></i> 
+            <i class="fa-solid fa-bars"></i>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <li>
@@ -59,17 +66,21 @@
               >
             </li>
             <li>
-              <a class="dropdown-item" id="dropdown-item-event" href="#evnts-gallery" alt="optio"
+              <a
+                class="dropdown-item"
+                id="dropdown-item-event"
+                href="#evnts-gallery"
+                alt="optio"
                 ><i class="fa-solid fa-calendar-week"></i> Events</a
               >
             </li>
             <li>
-              <a class="dropdown-item" href="#"
+              <a class="dropdown-item" href="/team.html"
                 ><i class="fa-solid fa-people-group"></i> Our team</a
               >
             </li>
             <li>
-              <a class="dropdown-item" href="#"
+              <a class="dropdown-item" href="about-us.html"
                 ><i class="fa-solid fa-circle-info"></i> About Us</a
               >
             </li>
@@ -77,10 +88,7 @@
         </div>
       </header>
 
-
-      <p class="dept-head">
-        Department of Computer Science and Engineering
-      </p>
+      
 
       <hr />
 
@@ -89,21 +97,25 @@
         <div class="main-left">
           <div class="text-container">
             <p style="margin-bottom: 20px">
-              <span class="plug" style="font-size: 1.3rem"
+              <span class="plug" style="font-size: 1.2rem"
                 >Plug in and power up for the Grand Event</span
               >
             </p>
           </div>
+          <!-- mobile -->
+          <p class="mobile-plug">Plug in and power up for the Grand Event</p>
           <div class="mob-img">
-            <img src="https://res.cloudinary.com/dihkz12e6/image/upload/v1742958499/event-log-removebg-preview_rjiu0r.png" />
+            <img
+              src="https://res.cloudinary.com/dihkz12e6/image/upload/v1742958499/event-log-removebg-preview_rjiu0r.png"
+            />
           </div>
           <p class="genio">GENIO 2K25</p>
 
-          <p style="font-size: 1.5rem">From April 21</p>
+          <p class="date" style="font-size: 1.5rem">From April 28</p>
 
-          <div class="text-container">
+          <div class="text-container risez">
             <span>Rise</span>
-            <div class="divider"></div>
+            <div class="divider add"></div>
             <span>Revive</span>
             <div class="divider"></div>
             <span>Revolutionize</span>
@@ -113,7 +125,10 @@
         </div>
 
         <div class="main-right">
-          <img src="https://res.cloudinary.com/dihkz12e6/image/upload/v1742958499/event-log-removebg-preview_rjiu0r.png" alt="" />
+          <img
+            src="https://res.cloudinary.com/dihkz12e6/image/upload/v1742958499/event-log-removebg-preview_rjiu0r.png"
+            alt=""
+          />
         </div>
       </main>
 
@@ -161,7 +176,7 @@
       <!-- Image Gallery  -->
 
       <div class="container mt-5" id="evnts-gallery">
-        <p class="gallery-head">Genio Gallery</p>
+        <p class="gallery-head tech-heading">Genio Gallery</p>
         <div class="row g-4">
           <!-- Work shop -->
           <div class="col-md-6 block">
@@ -172,14 +187,16 @@
               />
               <div class="overlay">
                 <p>Work Shop</p>
-                <a href="tech-eve.html" class="explore-link" id="explore-link-tech"
+                <a
+                  href="tech-eve.html"
+                  class="explore-link"
+                  id="explore-link-tech"
                   >Explore <i class="fa-solid fa-angle-right"></i
                 ></a>
               </div>
             </div>
           </div>
-          
-          
+
           <!-- First Row Technical -->
           <div class="col-md-6 block">
             <div class="grid-box">
@@ -189,7 +206,10 @@
               />
               <div class="overlay">
                 <p>Technical Events</p>
-                <a href="tech-eve.html" class="explore-link" id="explore-link-tech"
+                <a
+                  href="tech-eve.html"
+                  class="explore-link"
+                  id="explore-link-tech"
                   >Explore <i class="fa-solid fa-angle-right"></i
                 ></a>
               </div>
@@ -235,9 +255,12 @@
       <section class="event-contact">
         <div class="dept-abt">
           <div class="dept-img">
-            <img src="https://res.cloudinary.com/dihkz12e6/image/upload/v1742958499/event-log-removebg-preview_rjiu0r.png" alt="" />
+            <img
+              src="https://res.cloudinary.com/dihkz12e6/image/upload/v1742958499/event-log-removebg-preview_rjiu0r.png"
+              alt=""
+            />
           </div>
-          
+
           <a href="#" class="event-contact-head">Genio 2k25</a>
           <p>
             The Department of Computer Science and Enginnering at Anna
@@ -280,8 +303,6 @@
           </p>
         </div>
       </section>
-
-      <hr />
 
       <!-- =============== -->
       <footer class="footer p-3">

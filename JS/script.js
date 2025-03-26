@@ -1,3 +1,9 @@
+/* Preloader animation */
+setTimeout(() => {
+  
+  document.querySelector('.preloader').style.display = 'none';
+}, 2000);
+
 function goBack() {
     window.history.back();
   }
