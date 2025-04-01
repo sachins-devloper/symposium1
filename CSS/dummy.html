@@ -1,83 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Preloader</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Timeline</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
+      /* Base Styles */
+      body {
+        background-color: #0a0f1c;
+        color: white;
+        font-family: "Orbitron", sans-serif;
+        margin: 0;
+        padding: 50px 0;
+        text-align: center;
+      }
 
-        .preloader img {
-            border-radius: 50%;
+      /* Timeline Layout */
+      .timeline-container {
+        position: relative;
+        width: 90%;
+        margin: auto;
+        padding: 50px 0;
+      }
+
+      /* Vertical Line */
+      .timeline-line {
+        position: absolute;
+        width: 5px;
+        background: cyan;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* Event Box */
+      .event-box {
+        position: relative;
+        width: 40%;
+        margin: 50px 0;
+        background: #111;
+        border: 2px solid cyan;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: left;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      .event-box.left {
+        left: -5%;
+      }
+
+      .event-box.right {
+        left: 55%;
+      }
+
+      /* Connector Line */
+      .connector {
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: cyan;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .event-box.left .connector {
+        right: -50px;
+      }
+
+      .event-box.right .connector {
+        left: -50px;
+      }
+
+      /* Dot Styling */
+      .dot {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: cyan;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 5px cyan, 0 0 10px cyan;
+      }
+
+      /* Fade-In Animation */
+      .hidden {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      .show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Highlight Dot When Visible */
+      .show .dot {
+        background: #00ffea;
+        box-shadow: 0 0 15px #00ffea, 0 0 25px #00ffea;
+      }
+
+      /* 📱 Responsive Fixes */
+      @media (max-width: 768px) {
+        .timeline-line {
+          left: 10px;
         }
-        .preloader {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            animation: fadeOut 1s ease-out 4s forwards;
+        .event-box {
+          width: 80%;
+          left: 15%;
         }
-        .pre-logo {
-            width: 200px; /* Adjust as needed */
-            animation: rotateLogo 1s linear, holdStill 2s linear 2s;
+        .event-box.left {
+          left: 15%;
         }
-        @keyframes rotateLogo {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+        .event-box.right {
+          left: 15%;
         }
-        @keyframes holdStill {
-            from, to {
-                transform: rotate(360deg);
-            }
+        .connector {
+          width: 20px;
+          left: -20px;
         }
-        @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; visibility: hidden; }
-        }
-        .loading-text {
-            font-family: 'Courier New', monospace;
-            color: #8b00ff;
-            font-size: 20px;
-            margin-top: 20px;
-            text-transform: uppercase;
-            animation: glitch 1.5s infinite;
-        }
-        @keyframes glitch {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; transform: skewX(-10deg); }
-            100% { opacity: 1; }
-        }
+      }
     </style>
-</head>
-<body>
-    <div class="preloader">
-        <img src="/img/event-log.jpeg" class="pre-logo" alt="Event Logo">
-        <div class="loading-text">Loading...</div>
+  </head>
+  <body>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+
+      <div class="event-box left hidden">
+        <div class="dot"></div>
+        <div class="connector"></div>
+        <div class="content">
+          <h3>Paper Presentation</h3>
+          <p>📅 10.00 AM onwards | 📍 IT Block</p>
+        </div>
+      </div>
+
+      <div class="event-box right hidden">
+        <div class="dot"></div>
+        <div class="connector"></div>
+        <div class="content">
+          <h3>Rapid Coding</h3>
+          <p>📅 10.00 AM - 12.00 PM | 📍 IT-444</p>
+        </div>
+      </div>
+
+      <div class="event-box left hidden">
+        <div class="dot"></div>
+        <div class="connector"></div>
+        <div class="content">
+          <h3>Anime Quiz</h3>
+          <p>📅 11.30 AM - 1.00 PM | 📍 IT-443</p>
+        </div>
+      </div>
+
+      <div class="event-box right hidden">
+        <div class="dot"></div>
+        <div class="connector"></div>
+        <div class="content">
+          <h3>Rapid Coding</h3>
+          <p>📅 10.00 AM - 12.00 PM | 📍 IT-444</p>
+        </div>
+      </div>
+
+      <div class="event-box left hidden">
+        <div class="dot"></div>
+        <div class="connector"></div>
+        <div class="content">
+          <h3>Paper Presentation</h3>
+          <p>📅 10.00 AM onwards | 📍 IT Block</p>
+        </div>
+      </div>
+
+      <div class="event-box right hidden">
+        <!-- <div class="dot"></div> -->
+        <div class="connector"></div>
+        <div class="content">
+          <h3>Rapid Coding</h3>
+          <p>📅 10.00 AM - 12.00 PM | 📍 IT-444</p>
+        </div>
+      </div>
     </div>
+
     <script>
-        setTimeout(() => {
-            document.querySelector('.preloader').style.display = 'none';
-        }, 5000);
+      document.addEventListener("DOMContentLoaded", function () {
+        const events = document.querySelectorAll(".event-box");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+              }
+            });
+          },
+          {
+            threshold: 0.2, // Adjusted for better mobile scrolling
+          }
+        );
+
+        events.forEach((event) => {
+          observer.observe(event);
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
